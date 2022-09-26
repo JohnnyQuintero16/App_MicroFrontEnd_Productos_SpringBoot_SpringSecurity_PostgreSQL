@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'', loadChildren: () => import('./pages/supermercado/auth/login/login.module').then(m => m.LoginModule) },
 
 
-  { path: 'inicio', loadChildren: () => import('./pages/supermercado/inicio/inicio.module').then(m => m.InicioModule), canActivate : [ProductosGuard] },
+  { path: 'inicio/:id', loadChildren: () => import('./pages/supermercado/inicio/inicio.module').then(m => m.InicioModule), canActivate : [ProductosGuard] },
 
 
   { path: 'login', loadChildren: () => import('./pages/supermercado/auth/login/login.module').then(m => m.LoginModule) , canActivate : [LoginGuard]},
@@ -23,7 +23,7 @@ const routes: Routes = [
 
   { path: 'agregar-productos', loadChildren: () => import('./pages/supermercado/agregar-productos/agregar-productos.module').then(m => m.AgregarProductosModule) , canActivate : [ProductosGuard] , data: { expectedRol: ['admin'] } },
 
-  { path: '**', loadChildren: () => import('./pages/supermercado/auth/login/login.module').then(m => m.LoginModule) }];
+  { path: '**', loadChildren: () => import('./pages/supermercado/inicio/inicio.module').then(m => m.InicioModule) }];
 
 
 

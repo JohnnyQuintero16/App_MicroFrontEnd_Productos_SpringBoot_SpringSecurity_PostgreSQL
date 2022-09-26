@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     private authService : AuthService,
     private router: Router,
     private toast: NgToastService,
-    private ngxService: NgxUiLoaderService
+    private ngxService: NgxUiLoaderService,
   ) {
 
   }
@@ -62,8 +62,10 @@ export class LoginComponent implements OnInit {
           this.loginUsuarioDto = new LoginUsuarioDto(this.username, this.password);
           this.authService.login(this.loginUsuarioDto).subscribe(
         data => {
-
-        this.router.navigate(['/inicio']);
+          
+          
+            this.router.navigate(['/inicio'], { queryParams: { id: this.loginUsuarioDto.username } });
+        
 
 
         setTimeout(() => {

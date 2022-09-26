@@ -20,11 +20,7 @@
                 <!--Fin Boton Close-->
                 <div class="offcanvas-body text-white justify-content-end">
                     <ul class="navbar-nav text-white ">
-                        <li class="nav-item" routerLinkActive="active" *ngIf="isLogged">
-                            <a class="nav-link text-white" [routerLink]="['/inicio']">
-                                <img src="assets/icons/home.png" alt="Inicio" title="Inicio" width="40px" height="40px">
-                            </a>
-                        </li>
+
                         <li class="nav-item" routerLinkActive="active" *ngIf="isLogged">
                             <a class="nav-link text-white" [routerLink]="['/lista-productos']">
                                 <img src="assets/icons/list.png" alt="Listado" title="Listado" width="40px" height="40px">
@@ -43,12 +39,6 @@
                         </li>
                         <li class="nav-item" routerLinkActive="active" *ngIf="isLogged" (click)="onLogOut()" >
                             <a class="nav-link text-white"  ><img src="assets/icons/logout.png" alt="Salir" title="Salir" width="40px" height="40px"></a>
-                        </li>
-                        <li class="nav-item" routerLinkActive="active" *ngIf="isLogged">
-                            <a class="nav-link text-white" [routerLink]="['/inicio']"><img src="assets/icons/more.png" alt="Novedades" title="Novedades" width="40px" height="40px"></a>
-                        </li>
-                        <li class="nav-item" routerLinkActive="active" *ngIf="!isLogged">
-                            <a class="nav-link text-white" [routerLink]="['/inicio']"><img src="assets/icons/lamp.png" alt="Ayuda" title="Ayuda" width="40px" height="40px"></a>
                         </li>
                     </ul>
 

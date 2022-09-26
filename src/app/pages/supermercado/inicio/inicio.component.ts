@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rutaActiva: ActivatedRoute) { }
 
+  user:string;
   ngOnInit(): void {
+    this.rutaActiva.queryParams.subscribe(
+      (params: Params) => {
+        this.user = params['id'];
+      }
+    );
   }
 
     //=========== SEGURIDAD ==============
